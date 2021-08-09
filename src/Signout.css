@@ -1,0 +1,58 @@
+.signout-container {
+  width: 50% !important;
+  margin-left: 30%;
+  margin-top: 100px;
+}
+.logout:hover {
+  cursor: pointer;
+  color: rgb(2, 55, 141);
+}
+.org-link {
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+}
+
+.my-title {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-bottom: 2px solid rgb(199, 198, 198);
+  color: rgb(49, 49, 49);
+}
+.my-admin {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-bottom: 2px solid rgb(199, 198, 198);
+  color: rgb(49, 49, 49);
+}
+.main-icon {
+  margin: 2rem 0;
+  color: rgb(49, 49, 49);
+}
+.main-icon:hover {
+  color: rgb(2, 55, 141);
+}
+.text-organisation {
+  margin-right: 1rem;
+  color: rgb(49, 49, 49);
+}
+.text-organisation:hover {
+  color: rgb(2, 55, 141);
+}
+.logout-icon {
+  position: fixed;
+  bottom: 90%;
+  font-size: 40px;
+  left: 88%;
+  color: rgb(2, 55, 141);
+}
+.logout-icon:hover {
+  cursor: pointer;
+  color: rgb(2, 55, 141);
+}
+.my-border {
+  position: fixed;
+  width: 8%;
+  bottom: 88%;
+  left: 85%;
+  border: 1px solid rgb(199, 198, 198);
+}

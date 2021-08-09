@@ -1,0 +1,32 @@
+.container {
+  width: 30%;
+  margin-top: 100px;
+}
+.btn {
+  background-color: rgb(2, 55, 141);
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+.title {
+  color: rgb(2, 55, 141);
+  text-align: center;
+}
+.paragraph {
+  color: rgb(179, 176, 176);
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.form-field {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(201, 201, 201, 0.295);
+  font-size: 20px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}
