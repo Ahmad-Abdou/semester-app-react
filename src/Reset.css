@@ -1,0 +1,10 @@
+.signin-form {
+  width: 50% !important;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+.form-email {
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+}

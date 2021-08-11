@@ -3,7 +3,7 @@ import { Button, Form, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Signin.css";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 
 function Signin() {
   const [signin, setSignin] = useState({});
@@ -56,7 +56,14 @@ function Signin() {
           value={password}
           name="password"
         />
-
+        <NavLink
+          className="ml-5 "
+          exact
+          to="/emailvalid"
+          activeClassName="activeClicked"
+        >
+          Forgot Password!
+        </NavLink>
         <Button type="submit" className="btn">
           Anslut
         </Button>
