@@ -34,6 +34,7 @@ function EmailValidation() {
 
   return (
     <>
+      <h2 className="reset-header">Reseting Password</h2>
       {changed && (
         <Alert className="my-alert-register" variant="success">
           Request has been sent to your email

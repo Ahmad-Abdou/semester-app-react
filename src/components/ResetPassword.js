@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Button, Form, Alert } from "react-bootstrap";
 import "../Reset.css";
+import { Redirect } from "react-router-dom";
 function ResetPassword() {
   const [user, setMyUser] = useState({ email: "", password: "" });
   const { email, password } = user;
   const [changed, isChanged] = useState(false);
+  const [redirect, isRedirect] = useState(false);
 
   const onChangeHandler = (e) => {
     setMyUser({ ...user, [e.target.name]: e.target.value });
@@ -20,7 +22,8 @@ function ResetPassword() {
         isChanged(true);
         setTimeout(() => {
           isChanged(false);
-        }, 6000);
+          isRedirect(true);
+        }, 3000);
       })
       .catch((err) => {
         console.log(err);
@@ -30,10 +33,13 @@ function ResetPassword() {
   return (
     <>
       {changed && (
-        <Alert className="my-alert-register" variant="success">
-          Password has been changed
-        </Alert>
+        <div>
+          <Alert className="my-alert-register" variant="success">
+            Password has been changed
+          </Alert>
+        </div>
       )}
+      {redirect && <Redirect to="/"></Redirect>}
 
       <Form className="signin-form" onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -50,7 +56,7 @@ function ResetPassword() {
           <Form.Control
             className="form-email "
             type="password"
-            placeholder="Enter password"
+            placeholder="Enter new password"
             onChange={onChangeHandler}
             value={password}
             name="password"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RiLogoutBoxRLine, RiCalendarCheckLine } from "react-icons/ri";
 import { Link, Redirect } from "react-router-dom";
 import Signout from "./Signout";
@@ -6,6 +6,7 @@ import axios from "axios";
 
 function Menu() {
   const [isSignedOut, setIsSignedOut] = useState(false);
+  const [signedInUser, setSignedInUser] = useState("");
   const signOut = () => {
     axios
       .post("http://localhost:8080/api/v1/signin/signout")
@@ -16,12 +17,31 @@ function Menu() {
         console.log(err);
       });
   };
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/v1/signin/myuser")
+      .then((res) => {
+        setSignedInUser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="container">
       {isSignedOut && <Redirect to="/"></Redirect>}
-      <h2 className="my-title">Semesterappen Admin</h2>
-      <h3 className="my-admin">Admin</h3>
+      {signedInUser === "SUPERVISOR" ? (
+        <div>
+          <h2 className="my-title">Semesterappen Super Admin</h2>
+          <h3 className="my-admin">Super Admin</h3>
+        </div>
+      ) : (
+        <div>
+          <h2 className="my-title">Semesterappen Admin</h2>
+          <h3 className="my-admin">Admin</h3>
+        </div>
+      )}
 
       <Link to="/organisationer" className="org-link">
         <h2 className="main-icon">

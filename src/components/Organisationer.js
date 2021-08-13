@@ -33,9 +33,10 @@ function Organisationer() {
     tel: "",
     pause: false,
   });
-
   const [search, setSearch] = useState("");
   const [filteredSearch, setFilteredSearch] = useState([]);
+  const [signedInUser, setSignedInUser] = useState("");
+
   const deleteById = (id) => {
     axios
       .delete(`http://localhost:8080/api/v1/company/${id}`)
@@ -98,23 +99,46 @@ function Organisationer() {
         console.log(err);
       });
   };
+
+  companies.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  });
+
   useEffect(() => {
     fetchCompanies();
+    axios
+      .get("http://localhost:8080/api/v1/signin/myuser")
+      .then((res) => {
+        setSignedInUser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setFilteredSearch(
       companies.filter((thecompany) => {
         return thecompany.name.toLowerCase().includes(search.toLowerCase());
       })
     );
+    // eslint-disable-next-line
   }, [companies, search]);
 
   return (
     <div className="container">
-      <div className="header">
-        <Link to="/menu">
-          <IoIosArrowDropleftCircle className="header-icon"></IoIosArrowDropleftCircle>
-        </Link>
-        Admin
-      </div>
+      {signedInUser === "SUPERVISOR" ? (
+        <div className="header">
+          <Link to="/menu">
+            <IoIosArrowDropleftCircle className="header-icon"></IoIosArrowDropleftCircle>
+          </Link>
+          Super Admin
+        </div>
+      ) : (
+        <div className="header">
+          <Link to="/menu">
+            <IoIosArrowDropleftCircle className="header-icon"></IoIosArrowDropleftCircle>
+          </Link>
+          Admin
+        </div>
+      )}
 
       <div className="data-container">
         {filteredSearch.map((thecompany) => {

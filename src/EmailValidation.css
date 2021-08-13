@@ -9,3 +9,9 @@
   padding: 20px;
   font-size: 20px;
 }
+.reset-header {
+  text-align: center;
+  position: fixed;
+  top: 100px;
+  left: 42%;
+}
