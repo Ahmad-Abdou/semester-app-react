@@ -1,0 +1,26 @@
+.accept-btn {
+  background-color: rgb(71, 252, 86);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  margin: 5px 60px;
+}
+.decline-btn {
+  background-color: rgb(252, 98, 71);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  margin: 5px 5px;
+}
+.decline-btn:hover {
+  background-color: white;
+  border: 1px solid rgb(252, 98, 71);
+  color: rgb(252, 98, 71);
+}
+.accept-btn:hover {
+  background-color: white;
+  border: 1px solid rgb(71, 252, 86);
+  color: rgb(71, 252, 86);
+}

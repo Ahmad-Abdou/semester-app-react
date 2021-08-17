@@ -24,9 +24,7 @@ function Signin() {
       })
       .catch((err) => {
         setIsSubmited(true);
-        setTimeout(() => {
-          isSubmited(false);
-        }, 2000);
+
         console.log(err);
       });
   };

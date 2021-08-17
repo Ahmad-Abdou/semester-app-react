@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./components/Menu";
 import EmailValidation from "./components/EmailValidation";
 import ResetPassword from "./components/ResetPassword";
+import AdminRequests from "./components/AdminRequests";
 function App() {
   return (
     <>
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/reset">
             <ResetPassword></ResetPassword>
+          </Route>
+          <Route path="/request">
+            <AdminRequests></AdminRequests>
           </Route>
           <Route path="/emailvalid">
             <EmailValidation></EmailValidation>

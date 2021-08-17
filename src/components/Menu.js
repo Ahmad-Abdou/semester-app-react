@@ -35,20 +35,25 @@ function Menu() {
         <div>
           <h2 className="my-title">Semesterappen Super Admin</h2>
           <h3 className="my-admin">Super Admin</h3>
+          <Link to="/organisationer" className="org-link">
+            <h2 className="main-icon">
+              <RiCalendarCheckLine className="text-organisation"></RiCalendarCheckLine>
+              Organisationer
+            </h2>
+          </Link>
         </div>
       ) : (
         <div>
           <h2 className="my-title">Semesterappen Admin</h2>
           <h3 className="my-admin">Admin</h3>
+          <Link to="/request" className="org-link">
+            <h2 className="main-icon">
+              <RiCalendarCheckLine className="text-organisation"></RiCalendarCheckLine>
+              Requests
+            </h2>
+          </Link>
         </div>
       )}
-
-      <Link to="/organisationer" className="org-link">
-        <h2 className="main-icon">
-          <RiCalendarCheckLine className="text-organisation"></RiCalendarCheckLine>
-          Organisationer
-        </h2>
-      </Link>
 
       <h2 className="logout" onClick={signOut}>
         <RiLogoutBoxRLine className="text-organisation"></RiLogoutBoxRLine>
